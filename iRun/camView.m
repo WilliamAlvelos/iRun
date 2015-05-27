@@ -70,7 +70,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
     [self setSession:session];
     
     // Setup the preview view
-    [[self previewView] setSession:session];
+    //[[self previewView] setSession:session];
     
     // Check for device authorization
     [self checkDeviceAuthorizationStatus];
@@ -105,7 +105,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
                 // Because AVCaptureVideoPreviewLayer is the backing layer for AVCamPreviewView and UIView can only be manipulated on main thread.
                 // Note: As an exception to the above rule, it is not necessary to serialize video orientation changes on the AVCaptureVideoPreviewLayer’s connection with other session manipulation.
                 
-                [[(AVCaptureVideoPreviewLayer *)[[self previewView] layer] connection] setVideoOrientation:(AVCaptureVideoOrientation)[self interfaceOrientation]];
+//                [[(AVCaptureVideoPreviewLayer *)[[self previewView] layer] connection] setVideoOrientation:(AVCaptureVideoOrientation)[self interfaceOrientation]];
             });
         }
         
@@ -128,7 +128,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
             [session addOutput:movieFileOutput];
             AVCaptureConnection *connection = [movieFileOutput connectionWithMediaType:AVMediaTypeVideo];
             if ([connection isVideoStabilizationSupported])
-                [connection setEnablesVideoStabilizationWhenAvailable:YES];
+                //[connection setEnablesVideoStabilizationWhenAvailable:YES];
             [self setMovieFileOutput:movieFileOutput];
         }
         

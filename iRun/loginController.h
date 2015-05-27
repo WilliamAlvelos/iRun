@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Usuario.h"
 
 @interface loginController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *user;

@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Notification - iRun WatchKit App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>iRun WatchKit App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>iRun.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +22,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>3DA275821AE05D87003351A4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>3DCFE84F1ABA246F001B64BE</key>
 		<dict>
 			<key>primary</key>

@@ -25,6 +25,13 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)backAction:(id)sender {
+    
+    UIStoryboard * tela = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    eventoView * home = [tela instantiateViewControllerWithIdentifier:@"tabBar"];
+    home.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:home animated:YES completion:nil];
+}
 
 /*
 #pragma mark - Navigation
@@ -37,6 +44,11 @@
 */
 - (IBAction)action:(id)sender {
     
+    
+    UIStoryboard * tela = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    eventoView * home = [tela instantiateViewControllerWithIdentifier:@"tabBar"];
+    home.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:home animated:YES completion:nil];
     
     NSString * palavra = [NSString stringWithFormat:@"Você Esta Participando da %@", self.label1.text];
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"iRun"

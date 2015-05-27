@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6724" systemVersion="14D131" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController">
+                    <items>
+                        <imageView width="89" height="78" alignment="center" image="homem_correndo.jpg" id="PF1-eV-4GX"/>
+                        <label width="136" alignment="center" text="Label" textAlignment="center" id="SOW-ZP-TZx"/>
+                        <button width="1" alignment="left" title="Correr" id="ndN-u3-uTs">
+                            <connections>
+                                <action selector="actionCorrer" destination="AgC-eL-Hgc" id="PK0-ao-mui"/>
+                                <segue destination="FzB-D7-pCh" kind="push" id="Kp9-qA-HDw"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <color key="backgroundColor" red="0.51716048824094851" green="0.52081110166050937" blue="0.53176294191919193" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="imagem" destination="PF1-eV-4GX" id="4zr-Yo-IWT"/>
+                        <outlet property="labelNome" destination="SOW-ZP-TZx" id="UY6-1P-aA0"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="342"/>
+        </scene>
+        <!--Timer Watch Interface Controller-->
+        <scene sceneID="J2s-Jh-XvH">
+            <objects>
+                <controller id="FzB-D7-pCh" customClass="TimerWatchInterfaceController">
+                    <items>
+                        <timer width="135" height="76" alignment="left" textAlignment="center" id="j5N-M1-ctA">
+                            <fontDescription key="font" type="boldSystem" pointSize="26"/>
+                            <variation key="device=watch42mm">
+                                <calendarUnit key="units" hour="YES" minute="YES" second="YES"/>
+                            </variation>
+                        </timer>
+                        <button width="1" alignment="left" title="Button" id="pZs-94-jUd">
+                            <connections>
+                                <action selector="actionCorrida" destination="FzB-D7-pCh" id="4cE-tD-ALn"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="Timer" destination="j5N-M1-ctA" id="lii-F5-vSG"/>
+                        <outlet property="botaoCorrida" destination="pZs-94-jUd" id="m3A-s3-hJn"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="428" y="342"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>

@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "BancoDados.h"
+#import "evento.h"
 
 @interface ViewController ()
 
@@ -30,16 +32,27 @@
 - (IBAction)actionNew:(id)sender {
     
     //User Defaults Nome do Evento
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSMutableArray *array = [defaults objectForKey:@"eventos"];
-    if(!array){
-        array = [NSMutableArray array];
-        
-    }
-    [array addObject:self.nomeEvento.text];
-    [defaults setObject:array forKey:@"eventos"];
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    NSMutableArray *array = [defaults objectForKey:@"eventos"];
+//    if(!array){
+//        array = [NSMutableArray array];
+//        
+//    }
+//    [array addObject:self.nomeEvento.text];
+//    [defaults setObject:array forKey:@"eventos"];
+//
+//    [defaults synchronize];
     //User Defaults Local do Evento
-    [defaults synchronize];
+    
+    evento * e = [[evento alloc]init];
+    
+    e.nome_evento = self.nomeEvento.text;
+    e.local_evento = self.localEvento.text;
+    
+    BancoDados * banco = [[BancoDados alloc]init];
+    
+    [banco insereEvento:e];
+    
     
     //User Defaults Data Evento
     

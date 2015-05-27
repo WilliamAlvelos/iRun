@@ -8,6 +8,8 @@
 
 #import "ViewControllerGrupo.h"
 #import "eventoView.h"
+#import "BancoDados.h"
+
 @interface ViewControllerGrupo ()
 
 @end
@@ -21,16 +23,21 @@ NSMutableArray *tableData;
     [super viewDidLoad];
     // Initialize table data
     
+    tableData = [BancoDados retornaEventos];
     
-    NSMutableArray * eventos = [NSMutableArray arrayWithObjects:@"Maratona ", @"Corrida 5 km", @"Corrida 10 km", nil];
-
     
-    NSMutableArray * evento = [[NSUserDefaults standardUserDefaults] objectForKey:@"eventos"];
-    for (NSString *str in evento) {
-        [eventos addObject:str];
-    }
+//    NSMutableArray * eventos = [NSMutableArray arrayWithObjects:@"Maratona ", @"Corrida 5 km", @"Corrida 10 km", nil];
+//
+//    
+//    NSMutableArray * evento = [[NSUserDefaults standardUserDefaults] objectForKey:@"eventos"];
+//    for (NSString *str in evento) {
+//        [eventos addObject:str];
+//    }
+//    
+//    
+//    tableData = eventos;
     
-    tableData =  eventos;
+    //[tableData addObjectsFromArray:eventos];
     
     
     //= [NSMutableArray arrayWithArray:evento]
@@ -51,7 +58,7 @@ NSMutableArray *tableData;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [tableData count];
+    return tableData.count;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -71,9 +78,9 @@ NSMutableArray *tableData;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *simpleTableIdentifier = @"SimpleTableItem";
+    static NSString *simpleTableIdentifier = @"cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
